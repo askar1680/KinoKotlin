@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="112dp"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp">
+
+    <ImageView
+      android:src="@drawable/placeholder"
+      android:scaleType="centerCrop"
+      android:id="@+id/movie_image_view"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:background="@color/dark_grey"
+      app:layout_constraintDimensionRatio="2:3"
+      app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+      android:id="@+id/name_text_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/movie_image_view"
+      android:layout_marginTop="4dp"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="4dp"
+      android:maxLines="2"
+      android:textColor="@color/black"
+      android:ellipsize="end"/>
+
+    <TextView
+      android:id="@+id/genre_text_view"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/name_text_view"
+      android:layout_marginTop="4dp"
+      android:layout_marginStart="4dp"
+      android:layout_marginEnd="4dp"
+      android:paddingBottom="4dp"
+      android:textColor="@color/dark_grey" />
+
+  </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
