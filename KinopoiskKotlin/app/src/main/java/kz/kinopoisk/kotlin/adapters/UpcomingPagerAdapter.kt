@@ -16,24 +16,28 @@ import kz.kinopoisk.kotlin.models.Movie
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
 
+interface WatchTrailerClickDelegate{
+  fun watchClicked(index: Int)
+}
+
 class UpcomingPagerAdapter(private val movies: List<Movie>, var activity: Activity) : PagerAdapter() {
+
+  var watchTrailerClickDelegate: WatchTrailerClickDelegate? = null
+
   override fun instantiateItem(collection: ViewGroup, position: Int): Any {
     Log.d("Lol", "val")
     val view = LayoutInflater.from(activity).inflate(R.layout.item_upcoming, collection, false)
+    movies[position].backdropPath?.let { view.upcoming_trailer_image_view.loadImageFrom(Constants.TMDB_IMAGE_URL + Constants.BACKDROP_SIZE_W780 + it) }
     movies[position].posterPath?.let { view.upcoming_image_view.loadImageFrom(Constants.TMDB_IMAGE_URL + Constants.POSTER_SIZE_W342 + it) }
-    view.upcoming_trailer_view.setOnClickListener{
-      movies[position].videoRef?.let { videoId ->
-        val intent: Intent = YouTubeStandalonePlayer.createVideoIntent(
-          activity, Constants.GOOGLE_DEVELOPER_KEY, videoId, 0, true, true)
-        startActivity(view.context, intent, null)
-      }
+    view.click_view.setOnClickListener{
+      watchTrailerClickDelegate?.watchClicked(position)
     }
     collection.addView(view)
     return view
   }
 
   override fun destroyItem(collection: ViewGroup, position: Int, view: Any) {
-//    collection.removeView(view as View)
+    collection.removeView(view as View)
   }
 
   override fun getCount(): Int {
@@ -43,4 +47,10 @@ class UpcomingPagerAdapter(private val movies: List<Movie>, var activity: Activi
   override fun isViewFromObject(view: View, obj: Any): Boolean {
     return view === obj
   }
+
+
+
 }
+
+
+

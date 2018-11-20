@@ -1,5 +1,6 @@
 package kz.kinopoisk.kotlin.services
 
+import io.reactivex.Observable
 import kz.kinopoisk.kotlin.models.*
 import retrofit2.Call
 import retrofit2.http.GET
@@ -17,35 +18,35 @@ interface MovieService {
     @Path("movie_id") id: String,
     @Query("api_key") api_key: String,
     @Query("language") lang: String
-  ): Call<Movie>
+  ): Observable<MovieDetail>
 
   @GET("movie/{movie_id}/videos")
   fun movieVideos(
     @Path("movie_id") id: String,
     @Query("api_key") api_key: String,
     @Query("language") lang: String
-  ): Call<VideoResults>
+  ): Observable<VideoResults>
 
   @GET("/movie/{movie_id}/images")
   fun movieImages(
     @Path("movie_id") id: String,
     @Query("api_key") api_key: String,
     @Query("language") lang: String
-  ): Call<Images>
+  ): Observable<Images>
 
   @GET("/3/movie/{movie_id}/similar")
   fun similar(
     @Path("movie_id") id: String,
     @Query("api_key") api_key: String,
     @Query("language") lang: String
-  ): Call<MovieResults>
+  ): Observable<MovieResults>
 
   @GET("/3/movie/{movie_id}/credits")
   fun credits(
     @Path("movie_id") id: String,
     @Query("api_key") api_key: String,
     @Query("language") lang: String
-  ): Call<CreditResults>
+  ): Observable<CreditResults>
 
 
   @GET("movie/now_playing")
@@ -53,21 +54,21 @@ interface MovieService {
     @Query("api_key") api_key: String,
     @Query("language") lang: String,
     @Query("page") page: Int
-  ): Call<MovieResults>
+  ): Observable<MovieResults>
 
   @GET("movie/popular")
   fun popular(
     @Query("api_key") api_key: String,
     @Query("language") lang: String,
     @Query("page") page: Int
-  ): Call<MovieResults>
+  ): Observable<MovieResults>
 
   @GET("movie/top_rated")
   fun topRated(
     @Query("api_key") api_key: String,
     @Query("language") lang: String,
     @Query("page") page: Int
-  ): Call<MovieResults>
+  ): Observable<MovieResults>
 
   @GET("movie/upcoming")
   fun upcoming(
@@ -75,5 +76,5 @@ interface MovieService {
     @Query("language") lang: String,
     @Query("page") page: Int
 
-  ): Call<MovieResults>
+  ): Observable<MovieResults>
 }

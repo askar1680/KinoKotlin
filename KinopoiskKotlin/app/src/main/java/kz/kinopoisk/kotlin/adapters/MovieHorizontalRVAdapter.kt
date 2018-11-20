@@ -13,11 +13,9 @@ import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
 import java.lang.Exception
 
-class MoviesAdapter(val movies: List<Movie>): RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
+class MovieHorizontalRVAdapter(val movies: List<Movie>): RecyclerView.Adapter<MovieHorizontalRVAdapter.ViewHolder>() {
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-    Log.d("MoviesAdapter", "blaaaasukatvar naxu")
     val view = LayoutInflater.from(parent.context).inflate(R.layout.item_horizontal_rv_movie, parent, false)
-
     return ViewHolder(view)
   }
 
@@ -31,8 +29,6 @@ class MoviesAdapter(val movies: List<Movie>): RecyclerView.Adapter<MoviesAdapter
 
       view.name_text_view.text = movie.title
       view.genre_text_view.text = movie.originalTitle
-
-
       view.movie_image_view.loadImageFrom(Constants.TMDB_IMAGE_URL + Constants.POSTER_SIZE_W342 + movie.posterPath)
     }
   }

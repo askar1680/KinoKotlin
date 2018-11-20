@@ -30,6 +30,29 @@ object ServiceGenerator {
   }
 }
 
+object NetworkClient {
+
+  fun getRetrofit(): Retrofit {
+    var retrofit: Retrofit? = null
+
+    if (retrofit == null) {
+      val builder = OkHttpClient.Builder()
+      val okHttpClient = builder.build()
+
+      retrofit = Retrofit.Builder()
+        .baseUrl("http://api.themoviedb.org/3/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .client(okHttpClient)
+        .build()
+
+    }
+
+    return retrofit!!
+  }
+
+}
+
 
 
 

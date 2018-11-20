@@ -4,7 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".activities.MainActivity">
+  tools:context=".activities.main_activity.MainActivity">
 
   <LinearLayout
     android:id="@+id/toolbar_layout"
@@ -12,215 +12,229 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
       style="@style/toolbar_white"
       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+      android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
       app:title="@string/kinopoisk"
       app:titleTextColor="@color/orange"/>
     <include layout="@layout/view_shadow"/>
   </LinearLayout>
 
-  <android.support.v4.widget.NestedScrollView
+  <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
     app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
     app:layout_constraintBottom_toBottomOf="parent">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-
-      <android.support.constraint.ConstraintLayout
-        android:id="@+id/upcoming_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="12dp"
-        android:background="@color/dark_grey">
-        <android.support.v4.view.ViewPager
-          android:id="@+id/upcoming_movies_view_pager"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          app:layout_constraintDimensionRatio="22:9"
-          app:layout_constraintTop_toTopOf="parent"
-          />
-        <com.rd.PageIndicatorView
-          app:piv_selectedColor="@color/white"
-          app:piv_unselectedColor="@color/grey"
-          app:piv_animationType="slide"
-          app:piv_viewPager="@id/upcoming_movies_view_pager"
-          app:piv_dynamicCount="true"
-          app:piv_padding="8dp"
-          app:piv_radius="4dp"
-          app:piv_interactiveAnimation="true"
-          android:id="@+id/dots_indicator"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="16dp"
-
-          app:layout_constraintTop_toBottomOf="@id/upcoming_movies_view_pager"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"/>
-      </android.support.constraint.ConstraintLayout>
+      android:layout_height="match_parent">
 
       <LinearLayout
+        android:descendantFocusability="blocksDescendants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
-          android:layout_width="0dp"
-          android:layout_height="112dp"
-          android:layout_weight="1"
-          android:background="@drawable/background_border_grey">
-          <ImageView
-            android:id="@+id/films_image_view"
-            android:layout_marginTop="8dp"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:padding="8dp"
-            android:src="@drawable/film_reel"
+          android:id="@+id/upcoming_layout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingBottom="12dp"
+          android:background="@color/dark_grey">
+          <android.support.v4.view.ViewPager
+            android:id="@+id/upcoming_movies_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="22:9"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
-          
-          <TextView
+            />
+          <com.rd.PageIndicatorView
+            app:piv_selectedColor="@color/white"
+            app:piv_unselectedColor="@color/grey"
+            app:piv_animationType="slide"
+            app:piv_viewPager="@id/upcoming_movies_view_pager"
+            app:piv_dynamicCount="true"
+            app:piv_padding="4dp"
+            app:piv_radius="2dp"
+            app:piv_interactiveAnimation="true"
+            android:id="@+id/dots_indicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/upcoming_movies_view_pager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/films_image_view"
-            android:text="@string/films"
-            android:textColor="@color/black"/>
-          <View
-            android:id="@+id/films_click_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+          <ProgressBar
+            android:id="@+id/upcoming_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         </android.support.constraint.ConstraintLayout>
 
-        <android.support.constraint.ConstraintLayout
-          android:layout_width="0dp"
-          android:layout_height="112dp"
-          android:layout_weight="1"
-          android:background="@drawable/background_border_grey">
-          <ImageView
-            android:id="@+id/people_image_view"
-            android:layout_marginTop="8dp"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:padding="8dp"
-            android:src="@drawable/top_hat"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:weightSum="3">
 
+          <android.support.constraint.ConstraintLayout
+            android:id="@+id/movies_layout"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/background_border_grey">
+            <ImageView
+              android:id="@+id/films_image_view"
+              android:layout_marginTop="8dp"
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:padding="8dp"
+              android:src="@drawable/film_reel"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/films_image_view"
+              android:text="@string/films"
+              android:textSize="12sp"
+              android:textColor="@color/black"/>
+          </android.support.constraint.ConstraintLayout>
+
+          <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/background_border_grey">
+            <ImageView
+              android:id="@+id/people_image_view"
+              android:layout_marginTop="8dp"
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:padding="8dp"
+              android:src="@drawable/top_hat"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"/>
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/people_image_view"
+              android:text="@string/people"
+              android:textSize="12sp"
+              android:textColor="@color/black"/>
+          </android.support.constraint.ConstraintLayout>
+          <android.support.constraint.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@drawable/background_border_grey">
+            <ImageView
+              android:id="@+id/trailers_image_view"
+              android:layout_marginTop="8dp"
+              android:layout_width="56dp"
+              android:layout_height="56dp"
+              android:padding="8dp"
+              android:src="@drawable/play_button"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"/>
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/trailers_image_view"
+              android:text="@string/tv_show"
+              android:textSize="12sp"
+              android:textColor="@color/black"/>
+          </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+        <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/light_grey">
           <TextView
+            android:textSize="14sp"
+            android:textColor="@color/dark_grey"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/afisha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <TextView
+            android:id="@+id/now_playing_text_view"
+            android:text="@string/today_at_the_cinema"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+          <TextView
+            android:id="@+id/all_text_view"
+            android:text="@string/all"
+            app:layout_constraintTop_toTopOf="@id/now_playing_text_view"
+            app:layout_constraintBottom_toBottomOf="@id/now_playing_text_view"
+            app:layout_constraintEnd_toStartOf="@id/next_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+          <ImageView
+            android:id="@+id/next_image_view"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_navigate_next_grey_24dp"
+            app:layout_constraintTop_toTopOf="@id/now_playing_text_view"
+            app:layout_constraintBottom_toBottomOf="@id/now_playing_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"/>
+          <android.support.v7.widget.RecyclerView
+            android:id="@+id/now_playing_movies_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="232dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/now_playing_text_view"
+            android:paddingBottom="8dp"/>
+          <ProgressBar
+            android:id="@+id/now_playing_progress_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/people_image_view"
-            android:text="@string/people"
-            android:textColor="@color/black"/>
-          <View
-            android:id="@+id/people_click_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-          android:layout_width="0dp"
-          android:layout_height="112dp"
-          android:layout_weight="1"
-          android:background="@drawable/background_border_grey">
-          <ImageView
-            android:id="@+id/trailers_image_view"
-            android:layout_marginTop="8dp"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:padding="8dp"
-            android:src="@drawable/play_button"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
-
-          <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/trailers_image_view"
-            android:text="@string/trailers"
-            android:textColor="@color/black"/>
-          <View
-            android:id="@+id/trailers_click_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
         </android.support.constraint.ConstraintLayout>
 
       </LinearLayout>
-
-      <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/light_grey">
-        <TextView
-          android:textSize="14sp"
-          android:textColor="@color/dark_grey"
-          android:layout_marginTop="16dp"
-          android:layout_marginStart="16dp"
-          android:layout_marginBottom="12dp"
-          android:text="@string/afisha"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content" />
-      </FrameLayout>
-
-      <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-          android:id="@+id/now_playing_text_view"
-          android:text="@string/today_at_the_cinema"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_marginTop="16dp"
-          android:layout_marginStart="16dp"
-          android:textColor="@color/black"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content" />
-        <TextView
-          android:id="@+id/all_text_view"
-          android:text="@string/all"
-          app:layout_constraintTop_toTopOf="@id/now_playing_text_view"
-          app:layout_constraintBottom_toBottomOf="@id/now_playing_text_view"
-          app:layout_constraintEnd_toStartOf="@id/next_image_view"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          />
-
-        <ImageView
-          android:id="@+id/next_image_view"
-          android:layout_width="24dp"
-          android:layout_height="24dp"
-          android:src="@drawable/ic_navigate_next_grey_24dp"
-          app:layout_constraintTop_toTopOf="@id/now_playing_text_view"
-          app:layout_constraintBottom_toBottomOf="@id/now_playing_text_view"
-          app:layout_constraintEnd_toEndOf="parent"
-          android:layout_marginEnd="16dp"/>
-        <android.support.v7.widget.RecyclerView
-          android:id="@+id/now_playing_movies_recycler_view"
-          android:layout_width="match_parent"
-          android:layout_height="150dp"
-          android:layout_marginTop="8dp"
-          android:background="@color/dark_grey"
-          app:layout_constraintTop_toBottomOf="@id/now_playing_text_view"
-          />
-      </android.support.constraint.ConstraintLayout>
-
-
-
-      
-    </LinearLayout>
-
-  </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.NestedScrollView>
+  </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

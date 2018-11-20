@@ -5,7 +5,6 @@ object Constants{
   val BASE_URL = "https://api.themoviedb.org/3/"
   val API_KEY = "da9eabc662a0ba2c1354b077c3a1a839"
 
-
   val LANGUAGE = "ru"
 
   val TMDB_IMAGE_URL = "https://image.tmdb.org/t/p/"

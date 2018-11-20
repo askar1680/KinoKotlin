@@ -2,12 +2,21 @@
   <string name="app_name">KinopoiskKotlin</string>
 
   <string name="kinopoisk">Кинопоиск</string>
+  <string name="movies">Фильмы</string>
 
   <string name="films">Фильмы</string>
   <string name="people">Люди</string>
+  <string name="tv_show">ТВ шоу</string>
   <string name="trailers">Трейлеры</string>
 
   <string name="afisha">Афиша</string>
   <string name="today_at_the_cinema">Сегодня в кино</string>
   <string name="all">Все</string>
+
+  <string name="best_movies">Лучшие фильмы</string>
+  <string name="popular_movies">Популярные фильмы</string>
+
+
+  <string name="movie_list_type">movie_list_type</string>
+
 </resources>
