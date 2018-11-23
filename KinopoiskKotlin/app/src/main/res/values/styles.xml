@@ -43,7 +43,7 @@
 
   <style name="grey_text_12sp_width_0dp" parent="black_text_14sp_width_0dp">
     <item name="android:textColor">@color/grey</item>
-    <item name="textSize">12sp</item>
+    <item name="android:textSize">12sp</item>
   </style>
 
 

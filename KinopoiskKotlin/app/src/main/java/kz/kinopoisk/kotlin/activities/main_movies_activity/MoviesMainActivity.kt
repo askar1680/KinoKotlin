@@ -16,6 +16,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_movies_main.*
 import kz.kinopoisk.kotlin.R
 import kz.kinopoisk.kotlin.activities.ActivityInterface
+import kz.kinopoisk.kotlin.activities.movie_info_activity.MovieInfoActivity
 import kz.kinopoisk.kotlin.activities.movies_list_layout.MoviesListActivity
 import kz.kinopoisk.kotlin.adapters.MovieHorizontalRVAdapter
 import kz.kinopoisk.kotlin.adapters.MovieAdapter
@@ -95,6 +96,34 @@ class MoviesMainActivity : AppCompatActivity(), MoviesMainViewInterface, SearchV
       intent.putExtra(getString(R.string.movie_list_type), MovieListType.Popular.name)
       startActivity(intent)
     }
+    now_playing_movies_recycler_view.addOnItemTouchListener(
+      RecyclerItemClickListener(this, search_result_recycler_view, object : RecyclerItemClickListener.OnItemClickListener {
+        override fun onItemClick(view: View, position: Int) {
+          val movieId = nowPlayingMovies[position].id
+          val intent = Intent(applicationContext, MovieInfoActivity::class.java)
+          intent.putExtra(getString(R.string.movie_id), movieId)
+          startActivity(intent)
+        }
+        override fun onLongItemClick(view: View, position: Int) {}
+      })
+    )
+    hint_list_view.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+      val movieId = hintMovies[position].id
+      val intent = Intent(this, MovieInfoActivity::class.java)
+      intent.putExtra(getString(R.string.movie_id), movieId)
+      startActivity(intent)
+    }
+    search_result_recycler_view.addOnItemTouchListener(
+      RecyclerItemClickListener(this, search_result_recycler_view, object : RecyclerItemClickListener.OnItemClickListener {
+        override fun onItemClick(view: View, position: Int) {
+          val movieId = hintMovies[position].id
+          val intent = Intent(applicationContext, MovieInfoActivity::class.java)
+          intent.putExtra(getString(R.string.movie_id), movieId)
+          startActivity(intent)
+        }
+        override fun onLongItemClick(view: View, position: Int) {}
+      })
+    )
   }
 
   private fun setupMVP(){
@@ -119,26 +148,9 @@ class MoviesMainActivity : AppCompatActivity(), MoviesMainViewInterface, SearchV
 
     search_result_recycler_view.addItemDecoration(dividerItemDecoration)
     search_result_recycler_view.layoutManager = layoutManager
-    setupHintRVItemClick()
 
     hintAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, hints)
     hint_list_view.adapter = hintAdapter
-    hint_list_view.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-      val movie = hintMovies[position]
-    }
-  }
-
-  private fun setupHintRVItemClick(){
-    search_result_recycler_view.addOnItemTouchListener(
-      RecyclerItemClickListener(this, search_result_recycler_view, object : RecyclerItemClickListener.OnItemClickListener {
-        override fun onItemClick(view: View, position: Int) {
-//          val intent = Intent(applicationContext, MovieDetailActivity::class.java)
-//          intent.putExtra(getString(R.string.clicked_movie), hintMovies[position])
-//          startActivity(intent)
-        }
-        override fun onLongItemClick(view: View, position: Int) {}
-      })
-    )
   }
 
   private fun submitSearchText(){

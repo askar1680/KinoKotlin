@@ -86,12 +86,6 @@ class MainActivity : AppCompatActivity(), MainViewInterface, WatchTrailerClickDe
     setupClick()
 
   }
-  private fun setupClick(){
-    movies_click_view.setOnClickListener{
-      val intent = Intent(this, MoviesMainActivity::class.java)
-      startActivity(intent)
-    }
-  }
   private fun setupMVP() {
     mainPresenter = MainPresenter(this)
   }
@@ -103,8 +97,12 @@ class MainActivity : AppCompatActivity(), MainViewInterface, WatchTrailerClickDe
     mainPresenter?.getGenres()
 
   }
-
-
+  private fun setupClick(){
+    movies_click_view.setOnClickListener{
+      val intent = Intent(this, MoviesMainActivity::class.java)
+      startActivity(intent)
+    }
+  }
   override fun showToast(s: String) {
     Toast.makeText(this, s, Toast.LENGTH_LONG).show()
   }

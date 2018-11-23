@@ -9,7 +9,7 @@ class CreditResults {
   var id: Int = 0
   @SerializedName("cast")
   @Expose
-  var cast: List<Cast>? = null
+  var cast: List<Actor>? = null
   @SerializedName("crew")
   @Expose
   var crew: List<Crew>? = null

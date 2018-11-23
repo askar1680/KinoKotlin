@@ -25,8 +25,8 @@ class MovieAdapter(val movies: List<Movie>): RecyclerView.Adapter<MovieAdapter.V
     val movie = movies[position]
     with(holder) {
       view.name_text_view.text = movie.title
-      val releaseDate = movie.releaseDate?.let {  if (it.length > 4) it.substring(0, 4) else ""}
-      view.original_name_text_view.text = "${movie.originalTitle.toString()}, $releaseDate"
+      val releaseDate = movie.releaseDate?.let {  if (it.length > 4) ", ${it.substring(0, 4)}" else ""}
+      view.original_name_text_view.text = "${movie.originalTitle.toString()}$releaseDate"
       val genreStrings = mutableListOf<String>()
       movie.genres?.let { genres ->
         for (genre in genres){

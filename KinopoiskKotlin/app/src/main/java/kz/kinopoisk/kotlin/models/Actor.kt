@@ -3,7 +3,7 @@ package kz.kinopoisk.kotlin.models
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Cast {
+class Actor {
 
   @SerializedName("cast_id")
   @Expose

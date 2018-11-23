@@ -78,4 +78,22 @@ class MovieDetail {
   @Expose
   var voteCount: Int = 0
 
+  val duration: String
+    get() {
+      if (runtime != 0) {
+        val hours = runtime / 60
+        val minutes = runtime % 60
+        var duration = ""
+        if (hours == 0) {
+          duration = "" + minutes
+        } else if (hours == 1) {
+          duration = ", " + hours.toString() + "час " + minutes + "минут"
+        } else {
+          duration = ", " + hours.toString() + "часа " + minutes + "минут"
+        }
+        return duration
+      }
+      return ""
+    }
+
 }
