@@ -1,4 +1,4 @@
-package kz.kinopoisk.kotlin.services
+package kz.kinopoisk.kotlin.services.services
 
 import io.reactivex.Observable
 import kz.kinopoisk.kotlin.models.GenreResults

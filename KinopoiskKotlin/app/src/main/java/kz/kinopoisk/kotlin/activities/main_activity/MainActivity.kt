@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity(), MainViewInterface, WatchTrailerClickDe
 
   }
   private fun setupClick(){
-    movies_layout.setOnClickListener{
+    movies_click_view.setOnClickListener{
       val intent = Intent(this, MoviesMainActivity::class.java)
       startActivity(intent)
     }

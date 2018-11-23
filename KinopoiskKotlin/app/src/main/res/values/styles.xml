@@ -14,4 +14,49 @@
     <item name="android:minHeight">?attr/actionBarSize</item>
   </style>
 
+  <style name="clickable_background">
+    <item name="android:focusable">true</item>
+    <item name="android:clickable">true</item>
+    <item name="android:background">?android:attr/selectableItemBackground</item>
+  </style>
+
+  <style name="clickable_view" parent="clickable_background">
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:layout_width">match_parent</item>
+  </style>
+
+  <style name="black_text_12sp">
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/black</item>
+    <item name="android:ellipsize">end</item>
+  </style>
+
+  <style name="black_text_14sp" parent="black_text_12sp">
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="black_text_14sp_width_0dp" parent="black_text_14sp">
+    <item name="android:layout_width">0dp</item>
+  </style>
+
+  <style name="grey_text_12sp_width_0dp" parent="black_text_14sp_width_0dp">
+    <item name="android:textColor">@color/grey</item>
+    <item name="textSize">12sp</item>
+  </style>
+
+
+  <style name="separator_view">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1dp</item>
+    <item name="android:background">@color/light_grey</item>
+  </style>
+
+  <style name="image_view_56dp_padding_8dp">
+    <item name="android:layout_width">56dp</item>
+    <item name="android:layout_height">56dp</item>
+    <item name="android:padding">8dp</item>
+  </style>
+
 </resources>

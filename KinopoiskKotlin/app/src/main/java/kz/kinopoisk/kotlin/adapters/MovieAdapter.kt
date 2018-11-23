@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_movie.view.*
 import kz.kinopoisk.kotlin.R
 import kz.kinopoisk.kotlin.models.Movie
-import kz.kinopoisk.kotlin.services.GenreSingleton
+import kz.kinopoisk.kotlin.utils.GenreSingleton
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
 
@@ -25,7 +25,8 @@ class MovieAdapter(val movies: List<Movie>): RecyclerView.Adapter<MovieAdapter.V
     val movie = movies[position]
     with(holder) {
       view.name_text_view.text = movie.title
-      view.original_name_text_view.text = "${movie.originalTitle}, ${movie.releaseDate?.substring(0, 4)}"
+      val releaseDate = movie.releaseDate?.let {  if (it.length > 4) it.substring(0, 4) else ""}
+      view.original_name_text_view.text = "${movie.originalTitle.toString()}, $releaseDate"
       val genreStrings = mutableListOf<String>()
       movie.genres?.let { genres ->
         for (genre in genres){

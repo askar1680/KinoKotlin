@@ -16,7 +16,7 @@
       style="@style/toolbar_white"
       app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
       android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
-      app:title="@string/movies"
+      app:title="@string/about_movie"
       app:titleTextColor="@color/black"/>
     <include layout="@layout/view_shadow"/>
   </LinearLayout>
@@ -55,59 +55,42 @@
 
           <TextView
             android:id="@+id/name_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Thorckndskcnkdscncsndkcndsckns"
             android:textStyle="bold"
-            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="@id/movie_image_view"
             app:layout_constraintStart_toEndOf="@id/movie_image_view"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="4dp"
             android:layout_marginStart="8dp"
-            android:textSize="13sp"
-            android:ellipsize="end"
+            style="@style/black_text_14sp_width_0dp"
             android:maxLines="1"/>
 
           <TextView
             android:id="@+id/original_name_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/name_text_view"
             app:layout_constraintStart_toStartOf="@id/name_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Thor"
-            android:textColor="@color/black"
-            android:textSize="13sp"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:layout_marginTop="4dp"/>
+            android:layout_marginTop="4dp"
+            style="@style/black_text_14sp_width_0dp"
+            android:maxLines="1"/>
 
           <TextView
             android:id="@+id/genre_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/original_name_text_view"
             app:layout_constraintStart_toStartOf="@id/name_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Drama"
-            android:textColor="@color/black"
-            android:textSize="11sp"
+            style="@style/black_text_14sp_width_0dp"
+            android:textSize="12sp"
             android:maxLines="1"
-            android:ellipsize="end"
             android:layout_marginTop="4dp"
             tools:ignore="SmallSp" />
 
           <TextView
-            android:id="@+id/country_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/country_duration_text_view"
+            style="@style/black_text_14sp_width_0dp"
             app:layout_constraintTop_toBottomOf="@id/genre_text_view"
             app:layout_constraintStart_toStartOf="@id/name_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Drama"
-            android:textColor="@color/black"
-            android:textSize="11sp"
+            android:textSize="12sp"
             android:maxLines="1"
             android:ellipsize="end"
             android:layout_marginTop="4dp"
@@ -115,23 +98,184 @@
 
           <TextView
             android:id="@+id/tagline_text_view"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/country_text_view"
+            app:layout_constraintTop_toBottomOf="@id/country_duration_text_view"
             app:layout_constraintStart_toStartOf="@id/name_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="scdc"
-            android:textColor="@color/dark_grey"
-            android:textSize="11sp"
+            style="@style/grey_text_12sp_width_0dp"
+            android:maxLines="3"
             android:layout_marginTop="4dp"
             tools:ignore="SmallSp" />
 
         </android.support.constraint.ConstraintLayout>
 
         <View
+          style="@style/separator_view"/>
+
+        <android.support.constraint.ConstraintLayout
           android:layout_width="match_parent"
-          android:layout_height="1dp"
-          android:background="@color/light_grey"/>
+          android:layout_height="wrap_content">
+
+          <TextView
+            android:id="@+id/overview_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/black"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
+        <android.support.v7.widget.RecyclerView
+          android:layout_marginTop="16dp"
+          android:id="@+id/photos_recycler_view"
+          android:layout_width="match_parent"
+          android:layout_height="100dp"/>
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="48dp"
+          android:weightSum="2"
+          android:layout_marginTop="8dp"
+          android:orientation="horizontal"
+          android:paddingTop="2dp"
+          android:paddingBottom="1dp">
+          <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/background_border_grey">
+            <LinearLayout
+              style="@style/clickable_background"
+              android:layout_centerInParent="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/watch_trailer"
+                />
+              <TextView
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                style="@style/black_text_12sp"
+                android:text="@string/trailer"
+                />
+            </LinearLayout>
+          </RelativeLayout>
+
+          <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_border_grey">
+
+            <LinearLayout
+              style="@style/clickable_view"
+              android:layout_centerInParent="true"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/comment_black_oval_bubble"
+                />
+              <TextView
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                style="@style/black_text_12sp"
+                android:text="@string/reviews"
+                />
+            </LinearLayout>
+          </RelativeLayout>
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <TextView
+            android:id="@+id/text_rating"
+            android:text="@string/rating"
+            style="@style/black_text_14sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+          <com.iarcuschin.simpleratingbar.SimpleRatingBar
+            android:id="@+id/rating_bar"
+            android:focusableInTouchMode="false"
+            app:srb_isIndicator="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            app:srb_starSize="16dp"
+            app:srb_starsSeparation="1dp"
+            app:srb_fillColor="@color/gold"
+            app:srb_starBorderWidth="0dp"
+            app:srb_starBackgroundColor="@color/light_grey"
+            app:srb_borderColor="@color/transparent"
+            app:srb_numberOfStars="10"
+            app:layout_constraintTop_toBottomOf="@id/text_rating"
+            app:layout_constraintStart_toStartOf="@id/text_rating"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating_text_view"
+            app:layout_constraintTop_toTopOf="@id/rating_bar"
+            app:layout_constraintBottom_toBottomOf="@id/rating_bar"
+            app:layout_constraintStart_toEndOf="@id/rating_bar"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/green"
+            android:textSize="16sp"
+            />
+
+          <TextView
+            android:id="@+id/vote_count_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/rating_bar"
+            app:layout_constraintBottom_toBottomOf="@id/rating_bar"
+            app:layout_constraintStart_toEndOf="@id/rating_text_view"
+            android:layout_marginStart="16dp"
+            />
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
+
+        <android.support.constraint.ConstraintLayout
+          android:id="@+id/similar_movies_layout"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          style="@style/clickable_background">
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/similar_movies"
+            android:layout_marginStart="16dp"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
 
 
 

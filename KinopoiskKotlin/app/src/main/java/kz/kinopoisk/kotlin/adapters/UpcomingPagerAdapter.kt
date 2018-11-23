@@ -47,9 +47,6 @@ class UpcomingPagerAdapter(private val movies: List<Movie>, var activity: Activi
   override fun isViewFromObject(view: View, obj: Any): Boolean {
     return view === obj
   }
-
-
-
 }
 
 

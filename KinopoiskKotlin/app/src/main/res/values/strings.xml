@@ -15,6 +15,13 @@
 
   <string name="best_movies">Лучшие фильмы</string>
   <string name="popular_movies">Популярные фильмы</string>
+  <string name="similar_movies">Похожие фильмы</string>
+
+  <string name="trailer">Трейлер</string>
+  <string name="reviews">Рецензии</string>
+  <string name="about_movie">О фильме</string>
+  <string name="rating">Рейтинг</string>
+
 
 
   <string name="movie_list_type">movie_list_type</string>

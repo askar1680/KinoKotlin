@@ -16,5 +16,4 @@ class MovieResults{
   @SerializedName("total_pages")
   @Expose
   private val mTotalPages: Int = 0
-
 }

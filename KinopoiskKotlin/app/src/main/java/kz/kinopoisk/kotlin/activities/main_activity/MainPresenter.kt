@@ -5,7 +5,7 @@ import kz.kinopoisk.kotlin.models.Movie
 import kz.kinopoisk.kotlin.models.MovieResults
 import kz.kinopoisk.kotlin.models.VideoResults
 import kz.kinopoisk.kotlin.services.GenreApi
-import kz.kinopoisk.kotlin.services.GenreSingleton
+import kz.kinopoisk.kotlin.utils.GenreSingleton
 import kz.kinopoisk.kotlin.services.MovieApi
 import kz.kinopoisk.kotlin.utils.CustomCallback
 

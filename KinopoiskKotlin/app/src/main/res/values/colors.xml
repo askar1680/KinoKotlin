@@ -9,7 +9,10 @@
   <color name="black">#000</color>
   <color name="dark_grey">#4f4f4f</color>
   <color name="light_grey">#e9e9e9</color>
-  <color name="grey">#888888</color>
+  <color name="grey">#888</color>
+  <color name="gold">#f1c40f</color>
+  <color name="green">#27ae60</color>
+  <color name="transparent">@android:color/transparent</color>
 
   <color name="black_with_alpha">#88000000</color>
 

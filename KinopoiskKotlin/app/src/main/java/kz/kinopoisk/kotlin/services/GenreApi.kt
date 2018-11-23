@@ -6,6 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 import kz.kinopoisk.kotlin.models.GenreResults
+import kz.kinopoisk.kotlin.services.services.GenreService
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.CustomCallback
 
@@ -35,28 +36,6 @@ object GenreApi{
   }
 }
 
-//class NetworkApi<T>{
-//  fun <T> getT(callback: CustomCallback<T>){
-//    val x = GenreApi.genreSearchService.genreMovies(Constants.API_KEY, Constants.LANGUAGE)
-//    val observable: Observable<GenreResults> = GenreApi.genreSearchService.genreMovies(Constants.API_KEY, Constants.LANGUAGE)
-//      .subscribeOn(Schedulers.io())
-//      .observeOn(AndroidSchedulers.mainThread())
-//
-//    val observer: DisposableObserver<GenreResults> = object : DisposableObserver<GenreResults>() {
-//      override fun onComplete() {
-//        Log.d(GenreApi.TAG, "Completed")
-//      }
-//      override fun onNext(t: GenreResults) {
-//        callback.doSomething(t)
-//      }
-//      override fun onError(e: Throwable) {
-//        Log.d(GenreApi.TAG, "Error$e")
-//        e.printStackTrace()
-//        callback.showError("Error fetching Trailer Data")
-//      }
-//    }
-//  }
-//}
 
 
 

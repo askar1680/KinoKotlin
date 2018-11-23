@@ -84,19 +84,18 @@
             app:layout_constraintEnd_toEndOf="parent"/>
         </android.support.constraint.ConstraintLayout>
 
+        <View
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/light_grey"/>
+
         <android.support.constraint.ConstraintLayout
           android:layout_width="match_parent"
           android:layout_height="40dp"
           android:id="@+id/best_movies_layout"
-          android:clickable="true"
-          android:foreground="?android:attr/selectableItemBackground"
-          android:background="@drawable/background_border_grey"
-          android:focusable="true">
-          <View
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/light_grey"/>
+          style="@style/clickable_background">
+
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,26 +106,19 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
-          <View
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/light_grey"/>
         </android.support.constraint.ConstraintLayout>
+
+        <View
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/light_grey"/>
 
         <android.support.constraint.ConstraintLayout
           android:id="@+id/popular_movies_layout"
           android:layout_width="match_parent"
           android:layout_height="40dp"
-          android:clickable="true"
-          android:foreground="?android:attr/selectableItemBackground"
-          android:background="@drawable/background_border_grey"
-          android:focusable="true">
-          <View
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/light_grey"/>
+          style="@style/clickable_background">
           <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,12 +129,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
-          <View
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/light_grey"/>
         </android.support.constraint.ConstraintLayout>
+
+        <View
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/light_grey"/>
 
       </LinearLayout>
     </android.support.v4.widget.NestedScrollView>

@@ -1,141 +1,80 @@
 package kz.kinopoisk.kotlin.services
 
-import android.util.Log
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.annotations.NonNull
-import io.reactivex.observers.DisposableObserver
-import io.reactivex.schedulers.Schedulers
 import kz.kinopoisk.kotlin.models.Movie
 import kz.kinopoisk.kotlin.models.MovieDetail
 import kz.kinopoisk.kotlin.models.MovieResults
 import kz.kinopoisk.kotlin.models.VideoResults
+import kz.kinopoisk.kotlin.services.services.MovieService
+import kz.kinopoisk.kotlin.services.services.SearchService
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.CustomCallback
 
-
-
 object MovieApi{
 
-  private val TAG = "MovieApi"
+  private const val TAG = "MovieApi"
+  private val movieApiNetwork = ApiNetwork()
 
   private val movieService = NetworkClient.getRetrofit().create(MovieService::class.java)
   private val searchService = NetworkClient.getRetrofit().create(SearchService::class.java)
 
   fun getMovieDetail(movie: Movie, callback: CustomCallback<MovieDetail>){
     movie.id?.let {
-      val observable: Observable<MovieDetail> = movieService.movieDetails(it, Constants.API_KEY, Constants.LANGUAGE)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-
-      val observer: DisposableObserver<MovieDetail> = object : DisposableObserver<MovieDetail>() {
-        override fun onComplete() {
-          Log.d(TAG, "Completed")
-        }
-        override fun onNext(t: MovieDetail) {
+      movieApiNetwork.createNetwork(movieService.movieDetails(it, Constants.API_KEY, Constants.LANGUAGE), object : CustomCallback<MovieDetail>{
+        override fun doSomething(t: MovieDetail) {
           callback.doSomething(t)
         }
-        override fun onError(e: Throwable) {
-          Log.d(TAG, "Error$e")
-          e.printStackTrace()
-          callback.showError("Error fetching Movie Data")
+        override fun showError(error: String) {
+          callback.showError(error)
         }
-      }
-      observable.subscribeWith(observer)
+      })
     }
   }
 
   fun getTrailer(movie: Movie, callback: CustomCallback<VideoResults>){
     movie.id?.let {
-      val observable: Observable<VideoResults> = movieService.movieVideos(it, Constants.API_KEY, Constants.LANGUAGE)
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-
-      val observer: DisposableObserver<VideoResults> = object : DisposableObserver<VideoResults>() {
-        override fun onComplete() {
-          Log.d(TAG, "Completed")
-        }
-        override fun onNext(t: VideoResults) {
+      movieApiNetwork.createNetwork(movieService.movieVideos(it), object : CustomCallback<VideoResults> {
+        override fun doSomething(t: VideoResults) {
           callback.doSomething(t)
         }
-        override fun onError(e: Throwable) {
-          Log.d(TAG, "Error$e")
-          e.printStackTrace()
-          callback.showError("Error fetching Trailer Data")
-        }
 
-      }
-      observable.subscribeWith(observer)
+        override fun showError(error: String) {
+          callback.showError(error)
+        }
+      })
     }
   }
 
   fun getNowPlayingMovies(page: Int, callback: CustomCallback<MovieResults>) {
-    val observable: Observable<MovieResults> = movieService
-      .nowPlaying(Constants.API_KEY, Constants.LANGUAGE, page)
-      .subscribeOn(Schedulers.io())
-      .observeOn(AndroidSchedulers.mainThread())
-
-    val observer: DisposableObserver<MovieResults> = object : DisposableObserver<MovieResults>() {
-      override fun onNext(@NonNull movieResponse: MovieResults) {
-        Log.d(TAG, "OnNext" + movieResponse.movies)
-        callback.doSomething(movieResponse)
+    movieApiNetwork.createNetwork(movieService.nowPlaying(page), object : CustomCallback<MovieResults>{
+      override fun doSomething(t: MovieResults) {
+        callback.doSomething(t)
       }
-      override fun onError(@NonNull e: Throwable) {
-        Log.d(TAG, "Error$e")
-        e.printStackTrace()
-        callback.showError("Error fetching Movie Data")
+      override fun showError(error: String) {
+        callback.showError(error)
       }
-      override fun onComplete() {
-        Log.d(TAG, "Completed")
-      }
-    }
-    observable.subscribeWith(observer)
+    })
   }
 
   fun getUpcomingMovies(page: Int, callback: CustomCallback<MovieResults>) {
-    val observable: Observable<MovieResults> = movieService
-      .upcoming(Constants.API_KEY, Constants.LANGUAGE, page)
-      .subscribeOn(Schedulers.io())
-      .observeOn(AndroidSchedulers.mainThread())
-
-    val observer: DisposableObserver<MovieResults> = object : DisposableObserver<MovieResults>() {
-      override fun onNext(@NonNull movieResponse: MovieResults) {
-        Log.d(TAG, "OnNext" + movieResponse.movies)
-        callback.doSomething(movieResponse)
+    movieApiNetwork.createNetwork(movieService.upcoming(page), object : CustomCallback<MovieResults>{
+      override fun doSomething(t: MovieResults) {
+        callback.doSomething(t)
       }
-      override fun onError(@NonNull e: Throwable) {
-        Log.d(TAG, "Error$e")
-        e.printStackTrace()
-        callback.showError("Error fetching Movie Data")
+      override fun showError(error: String) {
+        callback.showError(error)
       }
-      override fun onComplete() {
-        Log.d(TAG, "Completed")
-      }
-    }
-    observable.subscribeWith(observer)
+    })
   }
 
   fun searchMovie(text: String, page: Int, callback: CustomCallback<MovieResults>){
-    val observable: Observable<MovieResults> = searchService
-      .searchMovie(text, Constants.API_KEY, Constants.LANGUAGE, page.toString())
-      .subscribeOn(Schedulers.io())
-      .observeOn(AndroidSchedulers.mainThread())
-
-    val observer: DisposableObserver<MovieResults> = object : DisposableObserver<MovieResults>() {
-      override fun onNext(@NonNull movieResponse: MovieResults) {
-        Log.d(TAG, "OnNext" + movieResponse.movies)
-        callback.doSomething(movieResponse)
+    movieApiNetwork.createNetwork(searchService.searchMovie(text, page), object : CustomCallback<MovieResults>{
+      override fun doSomething(t: MovieResults) {
+        callback.doSomething(t)
       }
-      override fun onError(@NonNull e: Throwable) {
-        Log.d(TAG, "Error$e")
-        e.printStackTrace()
-        callback.showError("Error fetching Movie Data")
+      override fun showError(error: String) {
+        callback.showError(error)
       }
-      override fun onComplete() {
-        Log.d(TAG, "Completed")
-      }
-    }
-    observable.subscribeWith(observer)
+    })
   }
 
 }
