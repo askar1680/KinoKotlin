@@ -1,9 +1,12 @@
 package kz.kinopoisk.kotlin.services.services
 
 import io.reactivex.Observable
-import kz.kinopoisk.kotlin.models.*
+import kz.kinopoisk.kotlin.models.image.Images
+import kz.kinopoisk.kotlin.models.movie.MovieDetail
+import kz.kinopoisk.kotlin.models.movie.MovieResults
+import kz.kinopoisk.kotlin.models.person.CreditResults
+import kz.kinopoisk.kotlin.models.video.VideoResults
 import kz.kinopoisk.kotlin.utils.Constants
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -35,7 +38,7 @@ interface MovieService {
     @Query("language") lang: String = Constants.LANGUAGE
   ): Observable<Images>
 
-  @GET("/3/movie/{movie_id}/get-movie-recommendations")
+  @GET("/3/movie/{movie_id}/recommendations")
   fun similar(
     @Path("movie_id") id: String,
     @Query("api_key") api_key: String = Constants.API_KEY,

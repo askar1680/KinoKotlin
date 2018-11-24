@@ -59,4 +59,11 @@
     <item name="android:padding">8dp</item>
   </style>
 
+  <style name="movies_horizontal_recycler_view">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">224dp</item>
+    <item name="android:layout_marginTop">0dp</item>
+    <item name="android:layout_marginBottom">0dp</item>
+  </style>
+
 </resources>

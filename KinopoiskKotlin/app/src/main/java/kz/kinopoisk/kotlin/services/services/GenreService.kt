@@ -1,8 +1,8 @@
 package kz.kinopoisk.kotlin.services.services
 
 import io.reactivex.Observable
-import kz.kinopoisk.kotlin.models.GenreResults
-import kz.kinopoisk.kotlin.models.MovieResults
+import kz.kinopoisk.kotlin.models.genre.GenreResults
+import kz.kinopoisk.kotlin.models.movie.MovieResults
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

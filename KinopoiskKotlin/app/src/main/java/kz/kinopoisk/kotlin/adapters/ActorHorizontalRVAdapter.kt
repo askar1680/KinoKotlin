@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_horizontal_actor.view.*
 import kz.kinopoisk.kotlin.R
-import kz.kinopoisk.kotlin.models.Actor
+import kz.kinopoisk.kotlin.models.person.Actor
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
 

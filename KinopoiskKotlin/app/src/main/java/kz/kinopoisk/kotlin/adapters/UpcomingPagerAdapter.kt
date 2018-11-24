@@ -1,18 +1,14 @@
 package kz.kinopoisk.kotlin.adapters
 
 import android.app.Activity
-import android.content.Context
-import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.view.PagerAdapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.youtube.player.YouTubeStandalonePlayer
 import kotlinx.android.synthetic.main.item_upcoming.view.*
 import kz.kinopoisk.kotlin.R
-import kz.kinopoisk.kotlin.models.Movie
+import kz.kinopoisk.kotlin.models.movie.Movie
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
 

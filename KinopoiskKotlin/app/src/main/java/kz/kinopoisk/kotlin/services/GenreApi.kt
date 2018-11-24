@@ -5,7 +5,7 @@ import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
-import kz.kinopoisk.kotlin.models.GenreResults
+import kz.kinopoisk.kotlin.models.genre.GenreResults
 import kz.kinopoisk.kotlin.services.services.GenreService
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.CustomCallback

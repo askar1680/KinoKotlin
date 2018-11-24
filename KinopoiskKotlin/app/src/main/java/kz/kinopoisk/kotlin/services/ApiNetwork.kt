@@ -21,6 +21,8 @@ class ApiNetwork{
         Log.d(TAG, "Completed")
       }
       override fun onNext(t: T) {
+        Log.d(TAG, "Here!!!")
+        Log.d(TAG, t.toString())
         callback.doSomething(t)
       }
       override fun onError(e: Throwable) {

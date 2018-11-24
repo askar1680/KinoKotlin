@@ -4,7 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".activities.movies_list_layout.MoviesListActivity">
+  tools:context=".activities.movies.movies_list_activity.MoviesListActivity">
 
   <LinearLayout
     android:id="@+id/toolbar_layout"

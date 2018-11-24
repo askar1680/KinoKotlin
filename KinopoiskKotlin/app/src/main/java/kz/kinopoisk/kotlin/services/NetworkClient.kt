@@ -21,9 +21,7 @@ object NetworkClient {
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(okHttpClient)
         .build()
-
     }
-
     return retrofit!!
   }
 

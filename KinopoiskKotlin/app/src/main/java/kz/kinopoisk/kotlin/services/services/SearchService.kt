@@ -1,9 +1,9 @@
 package kz.kinopoisk.kotlin.services.services
 
 import io.reactivex.Observable
-import kz.kinopoisk.kotlin.models.MovieResults
-import kz.kinopoisk.kotlin.models.PersonResults
-import kz.kinopoisk.kotlin.models.TVResults
+import kz.kinopoisk.kotlin.models.movie.MovieResults
+import kz.kinopoisk.kotlin.models.person.PersonResults
+import kz.kinopoisk.kotlin.models.tv.TVResults
 import kz.kinopoisk.kotlin.utils.Constants
 import retrofit2.http.GET
 import retrofit2.http.Query

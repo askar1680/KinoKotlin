@@ -19,9 +19,11 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:name=".activities.main_movies_activity.MoviesMainActivity" />
-    <activity android:name=".activities.movies_list_layout.MoviesListActivity" />
-    <activity android:name=".activities.movie_info_activity.MovieInfoActivity"/>
+    <activity android:name=".activities.movies.main_movies_activity.MoviesMainActivity" />
+    <activity android:name=".activities.movies.movies_list_activity.MoviesListActivity" />
+    <activity android:name=".activities.movies.movie_info_activity.MovieInfoActivity" />
+    <activity android:name=".activities.actor.actor_info_activity.ActorInfoActivity" />
+    <activity android:name=".activities.tv_show.main_tv_activity.TVsMainActivity"/>
   </application>
 
 </manifest>

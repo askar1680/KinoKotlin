@@ -1,9 +1,9 @@
 package kz.kinopoisk.kotlin.activities.main_activity
 
-import kz.kinopoisk.kotlin.models.GenreResults
-import kz.kinopoisk.kotlin.models.Movie
-import kz.kinopoisk.kotlin.models.MovieResults
-import kz.kinopoisk.kotlin.models.VideoResults
+import kz.kinopoisk.kotlin.models.genre.GenreResults
+import kz.kinopoisk.kotlin.models.movie.Movie
+import kz.kinopoisk.kotlin.models.movie.MovieResults
+import kz.kinopoisk.kotlin.models.video.VideoResults
 import kz.kinopoisk.kotlin.services.GenreApi
 import kz.kinopoisk.kotlin.utils.GenreSingleton
 import kz.kinopoisk.kotlin.services.MovieApi
@@ -11,7 +11,7 @@ import kz.kinopoisk.kotlin.utils.CustomCallback
 
 class MainPresenter(internal var mvi: MainViewInterface) : MainPresenterInterface {
   override fun getTrailer(movie: Movie){
-    MovieApi.getTrailer(movie, object : CustomCallback<VideoResults>{
+    MovieApi.getTrailer(movie.id, object : CustomCallback<VideoResults>{
       override fun doSomething(t: VideoResults) {
         mvi.watchTrailer(t)
       }

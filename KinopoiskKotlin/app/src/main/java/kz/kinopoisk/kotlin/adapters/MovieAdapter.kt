@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_movie.view.*
 import kz.kinopoisk.kotlin.R
-import kz.kinopoisk.kotlin.models.Movie
+import kz.kinopoisk.kotlin.models.movie.Movie
 import kz.kinopoisk.kotlin.utils.GenreSingleton
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
