@@ -82,7 +82,7 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:orientation="horizontal"
-          android:weightSum="3">
+          android:weightSum="2">
 
           <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
@@ -109,29 +109,6 @@
               style="@style/clickable_view"/>
           </android.support.constraint.ConstraintLayout>
 
-          <android.support.constraint.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/background_border_grey">
-            <ImageView
-              android:id="@+id/people_image_view"
-              android:layout_marginTop="8dp"
-              style="@style/image_view_56dp_padding_8dp"
-              android:src="@drawable/top_hat"
-              app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintEnd_toEndOf="parent"/>
-            <TextView
-              style="@style/black_text_12sp"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintEnd_toEndOf="parent"
-              app:layout_constraintTop_toBottomOf="@id/people_image_view"
-              android:text="@string/people" />
-            <View
-              android:id="@+id/people_click_view"
-              style="@style/clickable_view"/>
-          </android.support.constraint.ConstraintLayout>
           <android.support.constraint.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"

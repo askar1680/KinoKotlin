@@ -2,7 +2,7 @@ package kz.kinopoisk.kotlin.activities.movies.main_movies_activity
 
 import android.util.Log
 import kz.kinopoisk.kotlin.models.movie.MovieResults
-import kz.kinopoisk.kotlin.services.MovieApi
+import kz.kinopoisk.kotlin.services.api.MovieApi
 import kz.kinopoisk.kotlin.utils.CustomCallback
 
 class MoviesMainPresenter(internal var mvi: MoviesMainViewInterface): MoviesMainPresenterInterface{

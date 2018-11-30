@@ -2,15 +2,13 @@ package kz.kinopoisk.kotlin.models.person
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kz.kinopoisk.kotlin.models.tv.TVSuperClass
 
-class TVCast {
+class TVCast: TVSuperClass() {
 
   @SerializedName("credit_id")
   @Expose
   var creditId: String? = null
-  @SerializedName("original_name")
-  @Expose
-  var originalName: String? = null
   @SerializedName("id")
   @Expose
   var id: Int = 0
@@ -20,12 +18,6 @@ class TVCast {
   @SerializedName("character")
   @Expose
   var character: String? = null
-  @SerializedName("name")
-  @Expose
-  var name: String? = null
-  @SerializedName("poster_path")
-  @Expose
-  var posterPath: String? = null
   @SerializedName("vote_count")
   @Expose
   var voteCount: Int = 0

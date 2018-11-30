@@ -54,7 +54,7 @@ class MoviesListActivity : AppCompatActivity(), MoviesListViewInterface{
     setupIntentExtra()
   }
 
-  fun setupIntentExtra(){
+  private fun setupIntentExtra(){
     val typeString = intent.getStringExtra(getString(R.string.movie_list_type))
     listType = MovieListType.valueOf(typeString)
     movieId = intent.getStringExtra(getString(R.string.movie_id))

@@ -14,6 +14,7 @@ import kz.kinopoisk.kotlin.activities.ActivityInterface
 import kz.kinopoisk.kotlin.activities.movies.main_movies_activity.MoviesMainActivity
 import kz.kinopoisk.kotlin.activities.movies.movie_info_activity.MovieInfoActivity
 import kz.kinopoisk.kotlin.activities.movies.movies_list_activity.MoviesListActivity
+import kz.kinopoisk.kotlin.activities.tv_show.main_tv_activity.TVsMainActivity
 import kz.kinopoisk.kotlin.adapters.MovieHorizontalRVAdapter
 import kz.kinopoisk.kotlin.adapters.UpcomingPagerAdapter
 import kz.kinopoisk.kotlin.adapters.WatchTrailerClickDelegate
@@ -58,16 +59,15 @@ class MainActivity : AppCompatActivity(), MainViewInterface, WatchTrailerClickDe
       showToast("Error")
     }
   }
+
   override fun displayNowPlayingMovies(movieResult: MovieResults) {
     movieResult.movies?.let { movies ->
       nowPlayingMovies = movies.toMutableList()
       now_playing_movies_recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
       now_playing_movies_recycler_view.adapter = MovieHorizontalRVAdapter(nowPlayingMovies)
       now_playing_progress_bar.visibility = View.GONE
-
     }
   }
-
 
   override fun displayUpcomingMovies(movieResult: MovieResults) {
     movieResult.movies?.let { movies ->
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity(), MainViewInterface, WatchTrailerClickDe
 
   }
   private fun setupMVP() {
-    mainPresenter = MainPresenter(this)
+    mainPresenter = MainPresenter(this, this)
   }
   private fun getMovieList() {
     upcoming_progress_bar.visibility = View.VISIBLE
@@ -105,6 +105,10 @@ class MainActivity : AppCompatActivity(), MainViewInterface, WatchTrailerClickDe
   private fun setupClick(){
     movies_click_view.setOnClickListener{
       val intent = Intent(this, MoviesMainActivity::class.java)
+      startActivity(intent)
+    }
+    tv_shows_click_view.setOnClickListener{
+      val intent = Intent(this, TVsMainActivity::class.java)
       startActivity(intent)
     }
     now_playing_layout.setOnClickListener{

@@ -11,7 +11,7 @@ class ApiNetwork{
   companion object {
     const val TAG = "ApiNetwork"
   }
-  fun<T> createNetwork(observable: Observable<T>, callback: CustomCallback<T>){
+  fun <T> createNetwork(observable: Observable<T>, callback: CustomCallback<T>){
     val service = observable
       .subscribeOn(Schedulers.io())
       .observeOn(AndroidSchedulers.mainThread())

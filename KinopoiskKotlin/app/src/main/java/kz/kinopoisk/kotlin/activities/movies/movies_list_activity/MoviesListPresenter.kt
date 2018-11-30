@@ -1,7 +1,7 @@
 package kz.kinopoisk.kotlin.activities.movies.movies_list_activity
 
 import kz.kinopoisk.kotlin.models.movie.MovieResults
-import kz.kinopoisk.kotlin.services.MovieApi
+import kz.kinopoisk.kotlin.services.api.MovieApi
 import kz.kinopoisk.kotlin.utils.CustomCallback
 
 

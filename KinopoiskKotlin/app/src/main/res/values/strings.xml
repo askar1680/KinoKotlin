@@ -15,6 +15,7 @@
   <string name="today_at_the_cinema">Сегодня в кино</string>
   <string name="all">Все</string>
 
+
   <string name="best_movies">Лучшие фильмы</string>
   <string name="popular_movies">Популярные фильмы</string>
   <string name="upcoming_movies">Скоро в кино</string>
@@ -29,14 +30,30 @@
 
   <string name="about_actor">Об актёре</string>
 
-
+  <string name="about_tv_show">О ТВ шоу</string>
+  <string name="similar_tv_shows">Похожие ТВ шоу</string>
 
   <string name="best_tv_shows">Лучшие ТВ шоу</string>
   <string name="popular_tv_shows">Популярные ТВ шоу</string>
-  <string name="latest_tv_show">Новинки</string>
-  <string name="at_this_week">На этой неделе</string>
+  <string name="latest_tv_shows">Новинки ТВ шоу</string>
+  <string name="today_tv_shows">Сегодняшние ТВ шоу</string>
+  <string name="this_week_tv_shows">ТВ шоу на этой неделе</string>
 
   <string name="movie_list_type">movie_list_type</string>
   <string name="movie_id">movie_id</string>
 
+  <string name="tv_list_type">tv_list_type</string>
+  <string name="tv_id">tv_id</string>
+  <string name="actor_id">actor_id</string>
+
+  <string name="list_of_movies">Список фильмов</string>
+  <string name="list_of_tv_shows">Список ТВ шоу</string>
+  
+  <string name="popular_actors">Популярные имена</string>
+
+
+
+  <string name="shared_preferences">shared_preferences</string>
+  <string name="sp_now_playing_movies">sp_now_playing_movies</string>
+  <string name="sp_upcoming_movies">sp_upcoming_movies</string>
 </resources>

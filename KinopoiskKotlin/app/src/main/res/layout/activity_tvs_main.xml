@@ -4,6 +4,193 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".activities.tv_show.main_tv_activity.TVsMainActivity">
+  tools:context=".activities.movies.main_movies_activity.MoviesMainActivity">
+
+  <LinearLayout
+    android:id="@+id/toolbar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      style="@style/toolbar_white"
+      app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+      android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+      app:title="@string/tv_show"
+      app:titleTextColor="@color/black"/>
+    <include layout="@layout/view_shadow"/>
+  </LinearLayout>
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <android.support.v4.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <LinearLayout
+        android:descendantFocusability="blocksDescendants"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <android.support.constraint.ConstraintLayout
+            android:id="@+id/today_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/clickable_background"
+            android:paddingBottom="16dp">
+            <TextView
+              android:id="@+id/today_text_view"
+              android:text="@string/today_tv_shows"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              android:layout_marginTop="16dp"
+              android:layout_marginStart="16dp"
+              android:textColor="@color/black"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+            <TextView
+              android:id="@+id/now_playing_all_text_view"
+              android:text="@string/all"
+              app:layout_constraintTop_toTopOf="@id/today_text_view"
+              app:layout_constraintBottom_toBottomOf="@id/today_text_view"
+              app:layout_constraintEnd_toStartOf="@id/next_image_view"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+            <ImageView
+              android:id="@+id/next_image_view"
+              android:layout_width="24dp"
+              android:layout_height="24dp"
+              android:src="@drawable/ic_navigate_next_grey_24dp"
+              app:layout_constraintTop_toTopOf="@id/today_text_view"
+              app:layout_constraintBottom_toBottomOf="@id/today_text_view"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginEnd="16dp"/>
+
+          </android.support.constraint.ConstraintLayout>
+
+          <android.support.v7.widget.RecyclerView
+            android:id="@+id/today_tvs_recycler_view"
+            style="@style/movies_horizontal_recycler_view"
+            app:layout_constraintTop_toBottomOf="@id/today_layout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+          <ProgressBar
+            android:id="@+id/now_playing_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
+
+        <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:id="@+id/this_week_tvs_layout"
+          style="@style/clickable_background">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/this_week_tv_shows"
+            android:layout_marginStart="16dp"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
+
+        <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          android:id="@+id/top_rated_tvs_layout"
+          style="@style/clickable_background">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/best_tv_shows"
+            android:layout_marginStart="16dp"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
+
+        <android.support.constraint.ConstraintLayout
+          android:id="@+id/popular_tvs_layout"
+          android:layout_width="match_parent"
+          android:layout_height="40dp"
+          style="@style/clickable_background">
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/popular_tv_shows"
+            android:layout_marginStart="16dp"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+          style="@style/separator_view"/>
+
+
+      </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <FrameLayout
+      android:id="@+id/search_result_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/dark_grey"
+      android:visibility="gone">
+
+      <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_result_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+      android:id="@+id/search_hint_layout"
+      android:visibility="gone"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/black_with_alpha">
+      <ListView
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/hint_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"/>
+    </FrameLayout>
+
+  </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

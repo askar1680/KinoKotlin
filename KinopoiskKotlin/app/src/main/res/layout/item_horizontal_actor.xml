@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="96dp"
   android:layout_height="wrap_content"
   xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,7 +15,7 @@
       android:id="@+id/actor_image_view"
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:background="@color/dark_grey"
+      android:background="@color/light_grey"
       app:layout_constraintDimensionRatio="2:3"
       app:layout_constraintTop_toTopOf="parent"/>
 

@@ -4,23 +4,30 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kz.kinopoisk.kotlin.models.genre.Genre
 
-class TV {
-  @SerializedName("id")
-  var id: String? = null
+open class TVSuperClass(){
   @SerializedName("name")
+  @Expose
   var name: String? = null
+
+  @SerializedName("original_name")
+  @Expose
+  var originalName: String? = null
+
+  @SerializedName("poster_path")
+  @Expose
+  var posterPath: String? = null
+}
+
+class TV : TVSuperClass(){
+  @SerializedName("id")
+  @Expose
+  var id: String? = null
   @SerializedName("overview")
   @Expose
   var overview: String? = null
   @SerializedName("original_language")
   @Expose
   var originalLanguage: String? = null
-  @SerializedName("original_name")
-  @Expose
-  var originalName: String? = null
-  @SerializedName("poster_path")
-  @Expose
-  var posterPath: String? = null
   @SerializedName("backdrop_path")
   @Expose
   var backdropPath: String? = null
@@ -30,9 +37,9 @@ class TV {
   @SerializedName("episode_run_time")
   @Expose
   var episodeRunTime: List<Int>? = null
-  @SerializedName("genres")
+  @SerializedName("genre_ids")
   @Expose
-  var genres: List<Genre>? = null
+  var genres: List<Int>? = null
   @SerializedName("in_production")
   @Expose
   var isInProduction: Boolean = false

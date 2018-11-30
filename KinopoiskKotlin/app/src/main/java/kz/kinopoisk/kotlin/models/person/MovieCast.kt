@@ -2,17 +2,15 @@ package kz.kinopoisk.kotlin.models.person
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import kz.kinopoisk.kotlin.models.movie.MovieSuperClass
 
-class MovieCast {
+class MovieCast: MovieSuperClass(){
   @SerializedName("character")
   @Expose
   var character: String? = null
   @SerializedName("credit_id")
   @Expose
   var creditId: String? = null
-  @SerializedName("poster_path")
-  @Expose
-  var posterPath: String? = null
   @SerializedName("id")
   @Expose
   var id: Int = 0
@@ -34,15 +32,9 @@ class MovieCast {
   @SerializedName("original_language")
   @Expose
   var originalLanguage: String? = null
-  @SerializedName("original_title")
-  @Expose
-  var originalTitle: String? = null
   @SerializedName("popularity")
   @Expose
   var popularity: Double = 0.toDouble()
-  @SerializedName("title")
-  @Expose
-  var title: String? = null
   @SerializedName("vote_average")
   @Expose
   var voteAverage: Double = 0.toDouble()

@@ -1,4 +1,4 @@
-package kz.kinopoisk.kotlin.services
+package kz.kinopoisk.kotlin.services.api
 
 import android.util.Log
 import io.reactivex.Observable
@@ -6,6 +6,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 import kz.kinopoisk.kotlin.models.genre.GenreResults
+import kz.kinopoisk.kotlin.services.NetworkClient
 import kz.kinopoisk.kotlin.services.services.GenreService
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.CustomCallback
@@ -13,7 +14,7 @@ import kz.kinopoisk.kotlin.utils.CustomCallback
 object GenreApi{
   const val TAG = "GenreApi"
 
-  var genreSearchService = NetworkClient.getRetrofit().create(GenreService::class.java)
+  private var genreSearchService = NetworkClient.getRetrofit().create(GenreService::class.java)
   fun getGenres(callback: CustomCallback<GenreResults>){
     val observable: Observable<GenreResults> = genreSearchService.genreMovies(Constants.API_KEY, Constants.LANGUAGE)
       .subscribeOn(Schedulers.io())

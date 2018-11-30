@@ -4,8 +4,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kz.kinopoisk.kotlin.models.image.Images
 
-class Person {
-
+class Person: PersonSuperClass() {
   @SerializedName("adult")
   @Expose
   var isAdult: Boolean = false
@@ -30,18 +29,12 @@ class Person {
   @SerializedName("imdb_id")
   @Expose
   var imdbId: String? = null
-  @SerializedName("name")
-  @Expose
-  var name: String? = null
   @SerializedName("place_of_birth")
   @Expose
   var placeOfBirth: String? = null
   @SerializedName("popularity")
   @Expose
   var popularity: Double = 0.toDouble()
-  @SerializedName("profile_path")
-  @Expose
-  var profilePath: String? = null
   @SerializedName("images")
   @Expose
   var images: Images? = null

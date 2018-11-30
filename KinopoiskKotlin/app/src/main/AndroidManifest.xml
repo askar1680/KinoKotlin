@@ -23,7 +23,9 @@
     <activity android:name=".activities.movies.movies_list_activity.MoviesListActivity" />
     <activity android:name=".activities.movies.movie_info_activity.MovieInfoActivity" />
     <activity android:name=".activities.actor.actor_info_activity.ActorInfoActivity" />
-    <activity android:name=".activities.tv_show.main_tv_activity.TVsMainActivity"/>
+    <activity android:name=".activities.tv_show.main_tv_activity.TVsMainActivity" />
+    <activity android:name=".activities.tv_show.tv_info_activity.TVInfoActivity" />
+    <activity android:name=".activities.tv_show.tvs_list_activity.TVsListActivity" />
   </application>
 
 </manifest>

@@ -11,6 +11,7 @@ import kz.kinopoisk.kotlin.R
 import kz.kinopoisk.kotlin.models.movie.Movie
 import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.loadImageFrom
+import kz.kinopoisk.kotlin.utils.loadImageFromWithCache
 
 interface WatchTrailerClickDelegate{
   fun watchClicked(index: Int)
@@ -24,7 +25,7 @@ class UpcomingPagerAdapter(private val movies: List<Movie>, var activity: Activi
     Log.d("Lol", "val")
     val view = LayoutInflater.from(activity).inflate(R.layout.item_upcoming, collection, false)
     movies[position].backdropPath?.let { view.upcoming_trailer_image_view.loadImageFrom(Constants.TMDB_IMAGE_URL + Constants.BACKDROP_SIZE_W780 + it) }
-    movies[position].posterPath?.let { view.upcoming_image_view.loadImageFrom(Constants.TMDB_IMAGE_URL + Constants.POSTER_SIZE_W342 + it) }
+    movies[position].posterPath?.let { view.upcoming_image_view.loadImageFromWithCache(Constants.TMDB_IMAGE_URL + Constants.POSTER_SIZE_W342 + it) }
     view.click_view.setOnClickListener{
       watchTrailerClickDelegate?.watchClicked(position)
     }

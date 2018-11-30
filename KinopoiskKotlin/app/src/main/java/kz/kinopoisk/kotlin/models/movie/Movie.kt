@@ -5,7 +5,21 @@ import android.os.Parcelable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class Movie() : Parcelable {
+open class MovieSuperClass(){
+  @SerializedName("title")
+  @Expose
+  var title: String? = null
+
+  @SerializedName("original_title")
+  @Expose
+  var originalTitle: String? = null
+
+  @SerializedName("poster_path")
+  @Expose
+  var posterPath: String? = null
+}
+
+class Movie(): MovieSuperClass() {
   @SerializedName("adult")
   @Expose
   var isAdult: Boolean = false
@@ -27,18 +41,12 @@ class Movie() : Parcelable {
   @SerializedName("original_language")
   @Expose
   var originalLanguage: String? = null
-  @SerializedName("original_title")
-  @Expose
-  var originalTitle: String? = null
   @SerializedName("overview")
   @Expose
   var overview: String? = null
   @SerializedName("popularity")
   @Expose
   var popularity: Double = 0.toDouble()
-  @SerializedName("poster_path")
-  @Expose
-  var posterPath: String? = null
   @SerializedName("release_date")
   @Expose
   var releaseDate: String? = null
@@ -54,9 +62,6 @@ class Movie() : Parcelable {
   @SerializedName("tagline")
   @Expose
   var tagline: String? = null
-  @SerializedName("title")
-  @Expose
-  var title: String? = null
   @SerializedName("video")
   @Expose
   var isVideo: Boolean = false
@@ -95,47 +100,5 @@ class Movie() : Parcelable {
     voteAverage = parcel.readFloat()
     voteCount = parcel.readInt()
     videoRef = parcel.readString()
-  }
-
-  override fun toString(): String {
-    return "$title($releaseDate)"
-  }
-
-  override fun writeToParcel(parcel: Parcel, flags: Int) {
-    parcel.writeByte(if (isAdult) 1 else 0)
-    parcel.writeString(backdropPath)
-    parcel.writeLong(budget)
-    parcel.writeString(homepage)
-    parcel.writeString(id)
-    parcel.writeString(imdbId)
-    parcel.writeString(originalLanguage)
-    parcel.writeString(originalTitle)
-    parcel.writeString(overview)
-    parcel.writeDouble(popularity)
-    parcel.writeString(posterPath)
-    parcel.writeString(releaseDate)
-    parcel.writeLong(revenue)
-    parcel.writeInt(runtime)
-    parcel.writeString(status)
-    parcel.writeString(tagline)
-    parcel.writeString(title)
-    parcel.writeByte(if (isVideo) 1 else 0)
-    parcel.writeFloat(voteAverage)
-    parcel.writeInt(voteCount)
-    parcel.writeString(videoRef)
-  }
-
-  override fun describeContents(): Int {
-    return 0
-  }
-
-  companion object CREATOR : Parcelable.Creator<Movie> {
-    override fun createFromParcel(parcel: Parcel): Movie {
-      return Movie(parcel)
-    }
-
-    override fun newArray(size: Int): Array<Movie?> {
-      return arrayOfNulls(size)
-    }
   }
 }

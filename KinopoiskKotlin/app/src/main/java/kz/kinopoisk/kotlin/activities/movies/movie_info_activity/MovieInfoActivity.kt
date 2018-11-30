@@ -14,6 +14,7 @@ import com.google.android.youtube.player.YouTubeStandalonePlayer
 import kotlinx.android.synthetic.main.activity_movie_info.*
 import kz.kinopoisk.kotlin.R
 import kz.kinopoisk.kotlin.activities.ActivityInterface
+import kz.kinopoisk.kotlin.activities.actor.actor_info_activity.ActorInfoActivity
 import kz.kinopoisk.kotlin.activities.movies.movies_list_activity.MoviesListActivity
 import kz.kinopoisk.kotlin.adapters.ActorHorizontalRVAdapter
 import kz.kinopoisk.kotlin.adapters.MovieHorizontalRVAdapter
@@ -42,7 +43,6 @@ class MovieInfoActivity : AppCompatActivity(), MovieInfoView{
     similar_movies_recycler_view.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
     similar_movies_recycler_view.adapter = MovieHorizontalRVAdapter(similarMovies)
     similar_progress_bar.visibility = View.GONE
-
   }
 
   override fun displayMovieDetailInfo(movieDetail: MovieDetail) {
@@ -61,12 +61,11 @@ class MovieInfoActivity : AppCompatActivity(), MovieInfoView{
 
   override fun displayActors(actors: List<Actor>) {
     actors_recycler_view.layoutManager = LinearLayoutManager(this, LinearLayout.HORIZONTAL, false)
-    for(actor in actors){
-      Log.d("MovieInfoActivity", actor.toString())
-    }
-    actors_recycler_view.adapter = ActorHorizontalRVAdapter(actors)
+    this.actors.addAll(actors)
+    actors_recycler_view.adapter = ActorHorizontalRVAdapter(this.actors)
     actors_progress_bar.visibility = View.GONE
   }
+
 
   override fun showToast(s: String) {
     Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
@@ -78,6 +77,7 @@ class MovieInfoActivity : AppCompatActivity(), MovieInfoView{
 
   var presenter: MovieInfoPresenter? = null
   var similarMovies = mutableListOf<Movie>()
+  var actors = mutableListOf<Actor>()
   lateinit var movieId: String
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,10 +98,6 @@ class MovieInfoActivity : AppCompatActivity(), MovieInfoView{
     presenter?.getMovieDetail()
     presenter?.getSimilarMovies()
     presenter?.getActors()
-  }
-  private fun setupToolbar(){
-    setSupportActionBar(toolbar)
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
   }
   private fun setupClicks(){
     watch_trailer_view.setOnClickListener{
@@ -128,6 +124,22 @@ class MovieInfoActivity : AppCompatActivity(), MovieInfoView{
       })
     )
 
+    actors_recycler_view.addOnItemTouchListener(
+      RecyclerItemClickListener(this, actors_recycler_view, object : RecyclerItemClickListener.OnItemClickListener {
+        override fun onItemClick(view: View, position: Int) {
+          val actorId = actors[position].id.toString()
+          val intent = Intent(applicationContext, ActorInfoActivity::class.java)
+          intent.putExtra(getString(R.string.actor_id), actorId)
+          startActivity(intent)
+        }
+        override fun onLongItemClick(view: View, position: Int) {}
+      })
+    )
+  }
+
+  private fun setupToolbar(){
+    setSupportActionBar(toolbar)
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
   }
   override fun onOptionsItemSelected(item: MenuItem?): Boolean {
     when (item?.itemId) {

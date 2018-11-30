@@ -1,14 +1,14 @@
-package kz.kinopoisk.kotlin.services
+package kz.kinopoisk.kotlin.services.api
 
 import kz.kinopoisk.kotlin.models.image.Images
-import kz.kinopoisk.kotlin.models.movie.Movie
 import kz.kinopoisk.kotlin.models.movie.MovieDetail
 import kz.kinopoisk.kotlin.models.movie.MovieResults
 import kz.kinopoisk.kotlin.models.person.CreditResults
 import kz.kinopoisk.kotlin.models.video.VideoResults
+import kz.kinopoisk.kotlin.services.ApiNetwork
+import kz.kinopoisk.kotlin.services.NetworkClient
 import kz.kinopoisk.kotlin.services.services.MovieService
 import kz.kinopoisk.kotlin.services.services.SearchService
-import kz.kinopoisk.kotlin.utils.Constants
 import kz.kinopoisk.kotlin.utils.CustomCallback
 
 object MovieApi{

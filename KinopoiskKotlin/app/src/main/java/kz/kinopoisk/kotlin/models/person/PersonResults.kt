@@ -27,22 +27,26 @@ class PersonResults {
   }
 }
 
-class PersonSearch{
-  @SerializedName("popularity")
-  @Expose
-  private var popularity: Double = 0.toDouble()
-  @SerializedName("id")
-  @Expose
-  private var id: Int = 0
+open class PersonSuperClass(){
   @SerializedName("profile_path")
   @Expose
-  private var profilePath: String? = null
+  var profilePath: String? = null
+
   @SerializedName("name")
   @Expose
-  private var name: String? = null
+  var name: String? = null
+}
+
+class PersonSearch: PersonSuperClass(){
+  @SerializedName("popularity")
+  @Expose
+  private val popularity: Double = 0.toDouble()
+  @SerializedName("id")
+  @Expose
+  private val id: Int = 0
   @SerializedName("adult")
   @Expose
-  private var adult: Boolean = false
+  private val adult: Boolean = false
 
   override fun toString(): String {
     return "Result{" +

@@ -5,7 +5,7 @@ import kz.kinopoisk.kotlin.models.movie.MovieDetail
 import kz.kinopoisk.kotlin.models.movie.MovieResults
 import kz.kinopoisk.kotlin.models.person.CreditResults
 import kz.kinopoisk.kotlin.models.video.VideoResults
-import kz.kinopoisk.kotlin.services.MovieApi
+import kz.kinopoisk.kotlin.services.api.MovieApi
 import kz.kinopoisk.kotlin.utils.CustomCallback
 
 class MovieInfoPresenter(val mvi: MovieInfoView, val id: String): MovieInfoPresenterInterface{
@@ -45,7 +45,7 @@ class MovieInfoPresenter(val mvi: MovieInfoView, val id: String): MovieInfoPrese
         }
       }
       override fun showError(error: String) {
-
+        mvi.displayError(error)
       }
     })
   }
