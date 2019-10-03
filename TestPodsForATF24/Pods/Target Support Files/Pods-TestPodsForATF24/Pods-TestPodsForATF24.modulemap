@@ -1,0 +1,6 @@
+framework module Pods_TestPodsForATF24 {
+  umbrella header "Pods-TestPodsForATF24-umbrella.h"
+
+  export *
+  module * { export * }
+}
