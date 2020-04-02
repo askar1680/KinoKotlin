@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<style name="RegistrationPage"/>
+	
+	<style name="RegistrationPage.RootLayout">
+		<item name="android:background">@color/PrimaryDark</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:paddingTop">@dimen/PaddingLarge</item>
+		<item name="android:paddingStart">@dimen/MarginHuge</item>
+		<item name="android:paddingEnd">@dimen/MarginHuge</item>
+	</style>
+	
+	<style name="RegistrationPage.Title"
+		   parent="TextStyle.Medium.Large">
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:layout_marginBottom">@dimen/MarginLarge</item>
+		<item name="android:gravity">center</item>
+	</style>
+	
+	<style name="RegistrationPage.FormLayout">
+		<item name="android:layout_marginBottom">@dimen/MarginLarge</item>
+		<item name="android:orientation">vertical</item>
+	</style>
+	
+	<style name="RegistrationPage.TextInputLayout">
+		<item name="android:background">@null</item>
+		<item name="android:textColorHint">@color/TextColorLight</item>
+		<item name="android:layout_marginBottom">@dimen/MarginMedium</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText"
+		   parent="TextStyle.Regular">
+		<item name="android:maxLines">1</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:backgroundTint">@color/Translucent</item>
+		<item name="android:singleLine">true</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText.Email">
+		<item name="android:inputType">textEmailAddress</item>
+		<item name="android:hint">@string/Email</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText.Email.Confirm">
+		<item name="android:hint">@string/ConfirmEmail</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText.Name">
+		<item name="android:inputType">textPersonName</item>
+		<item name="android:hint">@string/FirstName</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText.Name.Last">
+		<item name="android:inputType">textPersonName</item>
+		<item name="android:hint">@string/LastName</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText.Password">
+		<item name="android:inputType">textPassword</item>
+		<item name="android:hint">@string/Password</item>
+	</style>
+	
+	<style name="RegistrationPage.EditText.Password.Confirm">
+		<item name="android:hint">@string/ConfirmPassword</item>
+	</style>
+	
+	<style name="RegistrationPage.NextButton"
+		   parent="ButtonStyle.Medium">
+		<item name="android:text">@string/Next</item>
+		<item name="android:layout_marginBottom">@dimen/MarginLarge</item>
+		<item name="android:layout_gravity">center_horizontal</item>
+		<item name="android:paddingStart">@dimen/PaddingHuge</item>
+		<item name="android:paddingEnd">@dimen/PaddingHuge</item>
+	</style>
+	
+	<style name="RegistrationPage.SignInButton"
+		   parent="TextStyle.Medium.Small">
+		<item name="android:text">@string/SignIn</item>
+		<item name="android:focusable">true</item>
+		<item name="android:clickable">true</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+	</style>
+	
+	<style name="RegistrationPage.SignInTitle"
+		   parent="TextStyle.Medium.Small">
+		<item name="android:text">@string/HaveAnyAccount</item>
+		<item name="android:layout_marginEnd">@dimen/MarginLarge</item>
+		<item name="android:textColor">@color/TextColorLightGrey</item>
+	</style>
+	
+	<style name="RegistrationPage.Developer"
+		   parent="TextStyle.Medium.Small">
+		<item name="android:text">@string/Developers</item>
+		<item name="android:textColor">@color/LightBlue</item>
+		<item name="android:layout_gravity">center_horizontal|bottom</item>
+		<item name="android:padding">@dimen/PaddingSmall</item>
+		<item name="android:layout_marginBottom">@dimen/MarginMedium</item>
+	</style>
+	
+	<style name="RegistrationPage.Switch"
+		   parent="TextStyle.Medium">
+		<item name="android:switchPadding">@dimen/PaddingMedium</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:thumbTextPadding">@dimen/PaddingHuge</item>
+		<item name="android:backgroundTint">@color/Milk</item>
+		<item name="android:drawablePadding">@dimen/PaddingLarge</item>
+		<item name="android:paddingStart">@dimen/PaddingMedium</item>
+		<item name="android:paddingEnd">@dimen/PaddingMedium</item>
+		<item name="android:text">Do not send newsletter</item>
+	</style>
+
+</resources>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<style name="HomePage"/>
+	
+	<style name="HomePage.RootLayout">
+		<item name="android:background">@color/Milk</item>
+		<item name="android:fitsSystemWindows">true</item>
+	</style>
+	
+	<style name="HomePage.Title"
+		   parent="@style/TextStyle.Bold.Large">
+		<item name="android:textColor">@color/TextColorTitle</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:paddingTop">@dimen/PaddingLarge</item>
+		<item name="android:paddingStart">@dimen/PaddingLarge</item>
+		<item name="android:paddingEnd">@dimen/PaddingLarge</item>
+	</style>
+	
+	<style name="HomePage.Title.AboutUs">
+		<item name="android:text">@string/AboutUs</item>
+	</style>
+	
+	<style name="HomePage.Title.SocialNetwork">
+		<item name="android:text">@string/SocialNetworks</item>
+	</style>
+	
+	<style name="HomePage.Subtitle"
+		   parent="TextStyle.Medium.Small">
+		<item name="android:paddingStart">@dimen/PaddingLarge</item>
+		<item name="android:paddingEnd">@dimen/PaddingLarge</item>
+		<item name="android:textColor">@color/TextColorGrey</item>
+	</style>
+	
+	<style name="HomePage.Subtitle.AboutUs">
+		<item name="android:text">@string/AboutGrataInternational</item>
+	</style>
+	
+	<style name="HomePage.Hat"
+		   parent="TextStyle.Medium">
+		<item name="android:layout_marginBottom">@dimen/MarginSmall</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:gravity">center</item>
+		<item name="android:text">@string/HomePageTitle</item>
+		<item name="android:padding">@dimen/PaddingSmall</item>
+	</style>
+	
+	<style name="HomePage.Button"
+		   parent="ButtonStyle"/>
+	
+	<style name="HomePage.Button.PickTeam"
+		   parent="ButtonStyle.Large.Fill">
+		<item name="android:text">@string/PickTeam</item>
+		<item name="android:layout_marginBottom">@dimen/MarginSmall</item>
+	</style>
+	
+	<style name="HomePage.Logo">
+		<item name="android:padding">@dimen/PaddingLarge</item>
+		<item name="android:layout_marginStart">@dimen/MarginLarge</item>
+		<item name="android:layout_marginEnd">@dimen/MarginLarge</item>
+		<item name="android:layout_marginBottom">60dp</item>
+		<item name="android:tint">@color/Milk</item>
+		<item name="android:layout_gravity">top</item>
+		<item name="android:src">@drawable/ic_logo_horizontal</item>
+	</style>
+	
+	<style name="HomePage.ShadowLayer">
+	</style>
+	
+	<style name="HomePage.CountContainer">
+		<item name="android:paddingStart">@dimen/PaddingLarge</item>
+		<item name="android:paddingEnd">@dimen/PaddingLarge</item>
+		<item name="android:layout_margin">@dimen/MarginLarge</item>
+		<item name="android:gravity">center</item>
+		<item name="android:weightSum">3</item>
+	</style>
+	
+	<style name="HomePage.Count">
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_marginEnd">@dimen/MarginMedium</item>
+		<item name="android:layout_marginStart">@dimen/MarginMedium</item>
+		<item name="android:gravity">top</item>
+	</style>
+	
+	<style name="HomePage.CountTitle"
+		   parent="TextStyle.Bold.Large">
+		<item name="android:gravity">start</item>
+		<item name="android:textColor">@color/Azure</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:text">@string/_hyphen_</item>
+	</style>
+	
+	<style name="HomePage.CountSubtitle"
+		   parent="TextStyle.Medium.Small">
+		<item name="android:gravity">start</item>
+		<item name="android:textColor">@color/TextColorLightGrey</item>
+	</style>
+	
+	<style name="HomePage.CountSubtitle.Professionals">
+		<item name="android:text">@string/Professionals</item>
+	</style>
+	
+	<style name="HomePage.CountSubtitle.Clients">
+		<item name="android:text">@string/Clients</item>
+	</style>
+	
+	<style name="HomePage.CountSubtitle.Experience">
+		<item name="android:text">@string/Experience</item>
+	</style>
+	
+	<style name="HomePage.SocialNetwork">
+		<item name="android:layout_gravity">center</item>
+	</style>
+	
+	<style name="HomePage.SocialNetwork.Facebook">
+		<item name="android:src">@drawable/ic_facebook_50</item>
+	</style>
+	
+	<style name="HomePage.SocialNetwork.LinkedIn">
+		<item name="android:src">@drawable/ic_linkedin_50</item>
+	</style>
+	
+	<style name="HomePage.SocialNetwork.Twitter">
+		<item name="android:src">@drawable/ic_twitter_50</item>
+	</style>
+	
+	<style name="HomePage.NestedScrollView">
+		<item name="android:scrollbars">none</item>
+		<item name="android:paddingStart">@dimen/PaddingSmall</item>
+		<item name="android:paddingEnd">@dimen/PaddingSmall</item>
+	</style>
+	
+	<style name="HomePage.CardView">
+		<item name="android:layout_margin">@dimen/MarginSmall</item>
+	</style>
+	
+	<style name="HomePage.CardViewChild">
+		<item name="android:padding">@dimen/PaddingLarge</item>
+	</style>
+
+</resources>

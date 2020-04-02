@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<color name="Primary" tools:ignore="MissingDefaultResource">#0E1D3F</color>
+	<color name="PrimaryDark">#0E1D3F</color>
+	<color name="Accent">#fff</color>
+	
+	<color name="Azure">#2864dc</color>
+	<color name="Milk">#FAFAFA</color>
+	<color name="MainDarkBlue">#262C40</color>
+	<color name="DarkBlue">#353B50</color>
+	<color name="LightBlue">#69718D</color>
+	<color name="Orange">#F95138</color>
+	<color name="Grey">#989898</color>
+	<color name="DarkGrey">#464646</color>
+	<color name="LightGrey">#EBECEC</color>
+	<color name="Black">#000</color>
+	<color name="White">#fff</color>
+	<color name="Translucent">#B3FFFFFF</color>
+	
+	<color name="TextColorTitle">#464646</color>
+	<color name="TextColorLight">#fff</color>
+	<color name="TextColorGrey">#B3000000</color>
+	<color name="TextColorLightGrey">#80BEBEBE</color>
+	<color name="Clear">#00000000</color>
+	<color name="BlueSeparatorColor">#4C4B63</color>
+</resources>

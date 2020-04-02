@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		style="@style/MessageDialog.Layout.Root">
+	
+	<LinearLayout android:layout_width="match_parent"
+				  android:layout_height="wrap_content"
+				  android:orientation="vertical"
+				  style="@style/MessageDialog.Layout.Text">
+		
+		<TextView
+				android:id="@+id/messageDialogTitle"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="@style/MessageDialog.TextView.Title"/>
+		
+		<TextView
+				android:id="@+id/messageDialogMessage"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				style="@style/MessageDialog.TextView.Message"/>
+	
+	</LinearLayout>
+	
+	<View android:layout_width="match_parent"
+		  android:layout_height="0.5dp"
+		  style="@style/MessageDialog.Separator"/>
+	
+	<LinearLayout android:layout_width="match_parent"
+				  android:layout_height="45dp"
+				  style="@style/MessageDialog.Layout.ButtonContainer">
+		
+		<Button
+				android:id="@+id/messageDialogPositiveButton"
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:visibility="gone"
+				android:layout_height="wrap_content"
+				style="@style/MessageDialog.Button.OK"/>
+		
+		<View
+				android:id="@+id/messageDialogButtonSeparator"
+				android:layout_width="0.5dp"
+				android:layout_height="match_parent"
+				android:visibility="gone"
+				style="@style/MessageDialog.Separator"/>
+		
+		<Button
+				android:id="@+id/messageDialogNegativeButton"
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:layout_height="wrap_content"
+				android:visibility="gone"
+				style="@style/MessageDialog.Button.Cancel"/>
+	
+	</LinearLayout>
+
+</LinearLayout>

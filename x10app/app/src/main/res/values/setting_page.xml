@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<dimen name="FormItemHeight">45dp</dimen>
+	
+	<style name="SettingPage"/>
+	
+	<style name="SettingPage.RootLayout">
+		<item name="android:background">@color/LightGrey</item>
+	</style>
+	
+	<style name="SettingPage.Form">
+		<item name="android:showDividers">middle</item>
+		<item name="android:orientation">vertical</item>
+	</style>
+	
+	<style name="SettingPage.Form.Root">
+		<item name="android:divider">@drawable/shape_divider_gray</item>
+	</style>
+	
+	<style name="SettingPage.Form.Child">
+		<item name="android:divider">@drawable/shape_divider_left</item>
+	</style>
+	
+	<style name="SettingPage.Form.Child.Information"
+		   parent="SelectableView">
+		<item name="android:background">@color/Milk</item>
+		<item name="android:orientation">vertical</item>
+		<item name="android:padding">@dimen/PaddingLarge</item>
+	</style>
+	
+	<style name="SettingPage.SpaceView">
+		<item name="android:background">@color/LightGrey</item>
+	</style>
+	
+	<style name="SettingPage.TextView"
+		   parent="TextStyle.Medium">
+		<item name="android:textColor">@color/Grey</item>
+	</style>
+	
+	<style name="SettingPage.TextView.Name"
+		   parent="TextStyle.Medium.Large">
+		<item name="android:textColor">@color/DarkGrey</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem"
+		   parent="SelectableView">
+		<item name="android:textAppearance">@style/TextStyle.Medium.Large</item>
+		<item name="android:background">@color/Milk</item>
+		<item name="android:paddingStart">@dimen/PaddingLarge</item>
+		<item name="android:paddingEnd">@dimen/PaddingLarge</item>
+		<item name="android:textColor">@color/DarkGrey</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:drawablePadding">@dimen/PaddingLarge</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem.Companies">
+		<item name="android:drawableStart">@drawable/ic_companies_25</item>
+		<item name="android:text">@string/MyCompanies</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem.Payment">
+		<item name="android:drawableStart">@drawable/ic_payment_25</item>
+		<item name="android:text">@string/PaymentSettings</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem.Support">
+		<item name="android:drawableStart">@drawable/ic_support_25</item>
+		<item name="android:text">@string/Support</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem.TermPolicies">
+		<item name="android:drawableStart">@drawable/ic_terms_policies_25</item>
+		<item name="android:text">@string/TermsPolicies</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem.About">
+		<item name="android:drawableStart">@drawable/ic_about_us_25</item>
+		<item name="android:text">@string/AboutGIDirect</item>
+	</style>
+	
+	<style name="SettingPage.TextView.FormItem.SignOut">
+		<item name="android:drawableStart">@drawable/ic_sign_out_25</item>
+		<item name="android:text">@string/SignOut</item>
+	</style>
+
+</resources>

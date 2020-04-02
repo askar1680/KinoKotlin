@@ -1,0 +1,34 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+use_frameworks!
+
+workspace 'ModuleApp'
+
+def app_pods
+  pod 'SkeletonView', '~> 1.7'
+end
+
+target 'App' do
+  project 'App/App.project'
+  app_pods
+
+  target 'AppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end
+
+def networklayer_pods
+  pod 'Alamofire', '~> 4.7'
+end
+
+target 'NetworkLayer' do
+  project 'NetworkLayer/NetworkLayer.project'
+  networklayer_pods
+
+  target 'NetworkLayerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end

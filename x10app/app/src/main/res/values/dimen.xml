@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="CornerRadiusSmall">4dp</dimen>
+	<dimen name="CornerRadiusMedium">16dp</dimen>
+	<dimen name="CornerRadiusLarge">20dp</dimen>
+	
+	<dimen name="ElevationLight">4dp</dimen>
+	<dimen name="ElevationMedium">8dp</dimen>
+	<dimen name="ElevationLarge">12dp</dimen>
+	
+	<dimen name="PaddingSmall">2dp</dimen>
+	<dimen name="PaddingMedium">8dp</dimen>
+	<dimen name="PaddingLarge">12dp</dimen>
+	<dimen name="PaddingHuge">30dp</dimen>
+	
+	<dimen name="MarginSmall">4dp</dimen>
+	<dimen name="MarginMedium">8dp</dimen>
+	<dimen name="MarginLarge">12dp</dimen>
+	<dimen name="MarginHuge">30dp</dimen>
+	
+	<dimen name="ShadowRadius">4dp</dimen>
+	
+	<dimen name="ButtonBorderWidth">2dp</dimen>
+	
+	<dimen name="ButtonCornerSmall">13dp</dimen>
+	<dimen name="ButtonCornerMedium">15dp</dimen>
+	<dimen name="ButtonCornerLarge">19dp</dimen>
+	
+	<dimen name="ButtonHeightSmall">26dp</dimen>
+	<dimen name="ButtonHeightMedium">30dp</dimen>
+	<dimen name="ButtonHeightLarge">38dp</dimen>
+	
+	<dimen name="TextSizeSmall">13sp</dimen>
+	<dimen name="TextSizeMedium">15sp</dimen>
+	<dimen name="TextSizeLarge">20sp</dimen>
+	
+	<dimen name="ButtonTextSizeSmall">12sp</dimen>
+	<dimen name="ButtonTextSizeMedium">13sp</dimen>
+	<dimen name="ButtonTextSizeLarge">16sp</dimen>
+	
+	<dimen name="SpaceHeight">30dp</dimen>
+</resources>

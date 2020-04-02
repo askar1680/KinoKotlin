@@ -1,0 +1,128 @@
+<resources>
+	
+	<style name="AppTheme"
+		   parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="windowActionBar">false</item>
+		<item name="windowNoTitle">true</item>
+		<item name="colorPrimary">@color/Primary</item>
+		<item name="colorPrimaryDark">@color/PrimaryDark</item>
+		<item name="colorAccent">@color/Accent</item>
+		<item name="android:navigationBarColor">@color/Primary</item>
+		<item name="android:statusBarColor">@color/Primary</item>
+	</style>
+	
+	<style name="ActivityTheme"
+		   parent="AppTheme"/>
+	
+	<style name="ActivityTheme.NoAnimation">
+		<item name="android:windowAnimationStyle">@null</item>
+	</style>
+	
+	<style name="SelectableView">
+		<item name="android:clickable">true</item>
+		<item name="android:focusable">true</item>
+		<item name="android:foreground">?attr/selectableItemBackground</item>
+	</style>
+	
+	<style name="NavigationView">
+		<item name="android:listDivider">@color/Accent</item>
+	</style>
+	
+	<style name="AppTheme.NoActionBar.AppBarOverlay"
+		   parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+	
+	<style name="AppTheme.NoActionBar.PopupOverlay"
+		   parent="ThemeOverlay.AppCompat.Light"/>
+	
+	<style name="AppTheme.AppBarOverlay"
+		   parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+	
+	<style name="CollapsingTextAppearance"
+		   parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+	
+	<style name="CollapsingTextAppearance.Inverse">
+		<item name="android:textColor">@android:color/transparent</item>
+	</style>
+	
+	<style name="TextStyle">
+		<item name="android:textSize">@dimen/TextSizeMedium</item>
+	</style>
+	
+	<style name="TextStyle.Small">
+		<item name="android:textSize">@dimen/TextSizeSmall</item>
+	</style>
+	
+	<style name="TextStyle.Large">
+		<item name="android:textSize">@dimen/TextSizeLarge</item>
+	</style>
+	
+	<style name="TextStyle.Regular">
+		<item name="android:fontFamily">fonts/SF-Pro-Display/SF-Pro_Display-Regular</item>
+	</style>
+	
+	<style name="TextStyle.Medium">
+		<item name="android:fontFamily">fonts/SF-Pro-Display/SF-Pro_Display-Medium</item>
+	</style>
+	
+	<style name="TextStyle.Bold">
+		<item name="android:fontFamily">fonts/SF-Pro-Display/SF-Pro_Display-Bold</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+	
+	<style name="TextStyle.Regular.Small"
+		   parent="TextStyle.Small"/>
+	
+	<style name="TextStyle.Regular.Large"
+		   parent="TextStyle.Large"/>
+	
+	<style name="TextStyle.Medium.Small"
+		   parent="TextStyle.Small"/>
+	
+	<style name="TextStyle.Medium.Large"
+		   parent="TextStyle.Large"/>
+	
+	<style name="TextStyle.Bold.Small"
+		   parent="TextStyle.Small"/>
+	
+	<style name="TextStyle.Bold.Large"
+		   parent="TextStyle.Large"/>
+	
+	<style name="ButtonStyle">
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:textSize">@dimen/ButtonTextSizeMedium</item>
+	</style>
+	
+	<style name="ButtonStyle.Small"
+		   parent="TextStyle.Bold.Small">
+		<item name="android:background">@drawable/shape_button_corner_small</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:textSize">@dimen/ButtonTextSizeSmall</item>
+	</style>
+	
+	<style name="ButtonStyle.Medium"
+		   parent="TextStyle.Bold">
+		<item name="android:background">@drawable/shape_button_corner_medium</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:textSize">@dimen/ButtonTextSizeMedium</item>
+	</style>
+	
+	<style name="ButtonStyle.Large"
+		   parent="TextStyle.Bold.Large">
+		<item name="android:background">@drawable/shape_button_corner_large</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:textSize">@dimen/ButtonTextSizeLarge</item>
+	</style>
+	
+	<style name="ButtonStyle.Small.Fill">
+		<item name="android:background">@drawable/shape_button_corner_small_fill</item>
+	</style>
+	
+	<style name="ButtonStyle.Medium.Fill">
+		<item name="android:background">@drawable/shape_button_corner_medium_fill</item>
+	</style>
+	
+	<style name="ButtonStyle.Large.Fill">
+		<item name="android:background">@drawable/shape_button_corner_large_fill</item>
+	</style>
+
+</resources>

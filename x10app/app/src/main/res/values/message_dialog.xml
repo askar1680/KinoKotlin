@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<style name="MessageDialog"/>
+	
+	<style name="MessageDialog.Layout"/>
+	
+	<style name="MessageDialog.Layout.Root">
+		<item name="android:background">@color/PrimaryDark</item>
+		<item name="android:orientation">vertical</item>
+	</style>
+	
+	<style name="MessageDialog.Layout.Text">
+		<item name="android:orientation">vertical</item>
+		<item name="android:padding">@dimen/PaddingMedium</item>
+	</style>
+	
+	<style name="MessageDialog.Layout.ButtonContainer">
+		<item name="android:orientation">horizontal</item>
+	</style>
+	
+	<style name="MessageDialog.TextView"
+		   parent="TextStyle.Medium">
+		<item name="android:textColor">@color/TextColorLight</item>
+	</style>
+	
+	<style name="MessageDialog.TextView.Title"
+		   parent="TextStyle.Bold.Large">
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_marginBottom">@dimen/MarginMedium</item>
+	</style>
+	
+	<style name="MessageDialog.TextView.Message">
+		<item name="android:layout_marginBottom">@dimen/MarginMedium</item>
+	</style>
+	
+	<style name="MessageDialog.Separator">
+		<item name="android:background">@color/White</item>
+	</style>
+	
+	<style name="MessageDialog.Button"
+		   parent="TextStyle.Regular">
+		<item name="android:foreground">?attr/selectableItemBackground</item>
+		<item name="android:textColor">@color/TextColorLight</item>
+		<item name="android:background">@android:color/transparent</item>
+	</style>
+	
+	<style name="MessageDialog.Button.OK">
+		<item name="android:text">@string/OK</item>
+	</style>
+	
+	<style name="MessageDialog.Button.Cancel">
+		<item name="android:text">@string/Cancel</item>
+	</style>
+
+</resources>
